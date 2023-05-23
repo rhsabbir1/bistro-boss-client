@@ -12,9 +12,15 @@ import swip3 from '../../../assets/home/slide3.jpg';
 import swip4 from '../../../assets/home/slide4.jpg';
 import swip5 from '../../../assets/home/slide5.jpg';
 
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+
 const Catagory = () => {
     return (
         <>
+            <SectionTitle
+            subHeading={'From 11:00am to 10:00pm'}
+            heading={'ORDER ONLINE'}
+            ></SectionTitle>
             <Swiper
                 slidesPerView={4}
                 spaceBetween={30}
@@ -27,23 +33,23 @@ const Catagory = () => {
             >
                 <SwiperSlide>
                     <img src={swip1} alt="" />
-                    <h1 className='text-3xl font-bold text-center text-white -mt-20'>Salad</h1>
+                    <h1 className='text-4xl uppercase text-center text-white -mt-16'>Salad</h1>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={swip2} alt="" />
-                    <h1 className='text-3xl font-bold text-center text-white -mt-20'>Pizzas</h1>
+                    <h1 className='text-4xl uppercase text-center text-white -mt-16'>Pizzas</h1>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={swip3} alt="" />
-                    <h1 className='text-3xl font-bold text-center text-white -mt-20'>Sups</h1>
+                    <h1 className='text-4xl uppercase text-center text-white -mt-16'>Sups</h1>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={swip4} alt="" />
-                    <h1 className='text-3xl font-bold text-center text-white -mt-20'>Dessert</h1>
+                    <h1 className='text-4xl uppercase text-center text-white -mt-16'>Dessert</h1>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={swip5} alt="" />
-                    <h1 className='text-3xl font-bold text-center text-white -mt-20'>Salad</h1>
+                    <h1 className='text-4xl uppercase text-center text-white -mt-16'>Salad</h1>
                 </SwiperSlide>
                
             </Swiper>
