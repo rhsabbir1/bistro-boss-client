@@ -39,21 +39,21 @@ const Menu = () => {
             {/*-------------- offered end ------------ */}
 
             {/*-------------- DESSERTS strrt ------------ */}
-            <MenuItems items={dessert}  img={desertImg} title='DESSERTS'></MenuItems>
+            <MenuItems items={dessert}  img={desertImg} title='dessert'></MenuItems>
             {/*-------------- DESSERTS end ------------ */}
 
             {/*-------------- pizza strrt ------------ */}
-            <MenuItems items={pizza}  img={pizzaImg} title='PIZZA'></MenuItems>
+            <MenuItems items={pizza}  img={pizzaImg} title='pizza'></MenuItems>
             {/*-------------- pizza end ------------ */}
 
 
             {/*-------------- salad strrt ------------ */}
-            <MenuItems items={salad}  img={saladImg} title='SALADS'></MenuItems>
+            <MenuItems items={salad}  img={saladImg} title='salad'></MenuItems>
             {/*-------------- salad end ------------ */}
 
 
             {/*-------------- salad strrt ------------ */}
-            <MenuItems items={soup}  img={soupImg} title='SOUPS'></MenuItems>
+            <MenuItems items={soup}  img={soupImg} title='soup'></MenuItems>
             {/*-------------- salad end ------------ */}
 
 

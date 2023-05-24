@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuItem from '../../shard/MenuItem/MenuItem';
 import Cover from '../../shard/Cover/Cover';
+import { Link } from 'react-router-dom';
 
 const MenuItems = ({items, title , img}) => {
     return (
@@ -13,6 +14,10 @@ const MenuItems = ({items, title , img}) => {
                 item={item}
                 ></MenuItem>)
             }
+            </div>
+            <div className='text-center'>
+            <Link to={`/order/${title}`}><button className="btn btn-outline border-b-4 border-0 mt-4">Order Food</button></Link>
+
             </div>
         </div>
     );
