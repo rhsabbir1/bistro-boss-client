@@ -24,7 +24,6 @@ const Catagory = () => {
             <Swiper
                 slidesPerView={4}
                 spaceBetween={30}
-                centeredSlides={true}
                 pagination={{
                     clickable: true,
                 }}
