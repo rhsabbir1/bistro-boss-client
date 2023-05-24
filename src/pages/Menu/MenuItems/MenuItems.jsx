@@ -16,7 +16,7 @@ const MenuItems = ({items, title , img}) => {
             }
             </div>
             <div className='text-center'>
-            <Link to={`/order/${title}`}><button className="btn btn-outline border-b-4 border-0 mt-4">Order Food</button></Link>
+            <Link to={`/order/${title}`}><button className="btn btn-outline bg-slate-200 border-b-4 border-0 mt-4">Order Food</button></Link>
 
             </div>
         </div>

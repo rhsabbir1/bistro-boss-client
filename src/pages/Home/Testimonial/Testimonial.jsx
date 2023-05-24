@@ -19,11 +19,11 @@ const Testimonial = () => {
     const [revews, setRevews] = useState([])
 
     useEffect(() => {
-        fetch('revew.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setRevews(data))
     }, [])
-
+console.log(revews)
     return (
         <section>
             <SectionTitle
