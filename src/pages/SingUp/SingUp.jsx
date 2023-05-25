@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContex } from '../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const SingUp = () => {
+    const[err, setErr]= useState('')
+    const {creatUser} = useContext(AuthContex)
 
     const handleSingUP = event=>{
         event.preventDefault()
+        setErr('')
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name , email, password)
+        
+        creatUser(email , password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+            form.reset()
+        })
+        .catch(err=>{
+            console.log(err)
+            setErr(err.message)
+        })
     }
     
     return (
@@ -41,6 +56,8 @@ const SingUp = () => {
                         <div className="form-control mt-6">
                             <input  className="btn btn-primary" type="submit" value="Sing Up" />
                         </div>
+                        <p><small>Already have an account ? <Link className='text-purple-700 font-semibold' to='/login'>Please Login</Link></small></p>
+                        <p className='text-red-600'>{err}</p>
                     </form>
                 </div>
             </div>

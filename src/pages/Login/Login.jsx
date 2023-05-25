@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { AuthContex } from '../../provider/AuthProvider';
 
 const Login = () => {
+    const[err, setErr]= useState('')
+    const {singInUser}= useContext(AuthContex)
+
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        singInUser(email , password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+            form.reset()
+        })
+        .catch(err=>{
+            console.log(err)
+            setErr(err.message)
+        })
         console.log(email, password)
     }
 
@@ -40,6 +55,8 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
+                        <p className='text-red-600'>{err}</p>
+                        <p><small>New to Bistro Boss ?<Link  className='text-purple-700 font-semibold' to='/singUp'>Please Register</Link></small></p>
                     </form>
                 </div>
             </div>
