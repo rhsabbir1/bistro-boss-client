@@ -1,24 +1,34 @@
 import React, { useContext, useState } from 'react';
 import { AuthContex } from '../../provider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const SingUp = () => {
     const[err, setErr]= useState('')
-    const {creatUser} = useContext(AuthContex)
+    const {creatUser ,updateUser} = useContext(AuthContex)
+    const navigate = useNavigate()
 
     const handleSingUP = event=>{
         event.preventDefault()
         setErr('')
         const form = event.target;
         const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
         
         creatUser(email , password)
         .then(result =>{
             const user = result.user;
-            console.log(user)
+            updateUser(name , photo)
+            .then(()=>{
+                navigate('/')
+            })
+            .catch(err=>{
+                console.log(err)
+            })
             form.reset()
+            console.log(user)
         })
         .catch(err=>{
             console.log(err)
@@ -28,6 +38,9 @@ const SingUp = () => {
     
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Bistro Boss/singUp</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-1/2">
                     <h1 className="text-5xl font-bold">Sing Up !</h1>
@@ -40,6 +53,12 @@ const SingUp = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input required type="text" name='name' placeholder="Name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo Url</span>
+                            </label>
+                            <input required type="text" name='photo' placeholder="Photo Url" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
