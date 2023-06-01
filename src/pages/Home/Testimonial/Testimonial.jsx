@@ -23,7 +23,7 @@ const Testimonial = () => {
             .then(res => res.json())
             .then(data => setRevews(data))
     }, [])
-console.log(revews)
+
     return (
         <section>
             <SectionTitle
